@@ -1,0 +1,139 @@
+/** @format */
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: grey;
+}
+.navigation_checkbox {
+  display: none;
+}
+.navigation_button {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: white;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 2000;
+  transition: transform 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.navigation_background {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-image: radial-gradient(lightgreen, green);
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1000;
+}
+.navigation_checkbox:checked ~ .navigation_background {
+  transform: scale(30);
+}
+.nav_bar {
+  height: 100vh;
+  position: fixed;
+  top: -15rem;
+  left: 20rem;
+  text-align: center;
+  z-index: 1500;
+  opacity: 0;
+}
+.navigation_checkbox:checked ~ .nav_bar {
+  opacity: 1;
+}
+.nav_list {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+.nav_item {
+  margin-top: 2rem;
+}
+.nav_link:link,
+.nav_link:visited {
+  display: inline-block;
+  font-size: 1.6rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0,
+    transparent 50%,
+    white 50%
+  );
+  background-size: 220%;
+  transition: all 2s;
+}
+.nav_link:hover,
+.nav_link:active {
+  background-position: 100%;
+  color: grey;
+}
+.navigation_icon {
+  margin: 1.5rem 0.7rem 0;
+  position: relative;
+}
+.navigation_icon,
+.navigation_icon::before,
+.navigation_icon::after {
+  width: 2rem;
+  height: 2px;
+  display: inline-block;
+  background-color: black;
+}
+.navigation_icon::before,
+.navigation_icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.navigation_icon::before {
+  top: -0.6rem;
+}
+.navigation_icon::after {
+  top: 0.6rem;
+}
+.navigation_button:hover .navigation_icon::before {
+  top: 1rem;
+}
+.navigation_button:hover .navigation_icon::after {
+  top: -1rem;
+}
+.header {
+  margin: 10rem;
+  position: relative;
+}
+.main-header {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+p {
+  color: white;
+}
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  background-image: linear-gradient(to right, orange, red);
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 10px;
+}
+.btn:hover,
+.btn:active {
+  transform: translateY(-1rem);
+}
+.background {
+  height: 50%;
+  background-image: linear-gradient(to right, orange, red);
+  position: absolute;
+  top: -0.5rem;
+  left: -1rem;
+}
